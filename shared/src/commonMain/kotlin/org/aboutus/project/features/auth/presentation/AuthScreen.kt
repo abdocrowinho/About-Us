@@ -9,6 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.aboutus.project.core.presentation.components.appGradientBackground
+import org.aboutus.project.core.presentation.components.AmbientFeelingLights
 import org.aboutus.project.features.auth.presentation.components.AnonymousAuthContent
 
 @Composable
@@ -16,6 +17,7 @@ fun AuthScreen(viewModel: AuthViewModel, onFinished: () -> Unit) {
     val state by viewModel.state.collectAsState(); Box(
         Modifier.fillMaxSize().appGradientBackground().navigationBarsPadding(), Alignment.Center
     ) {
+        AmbientFeelingLights()
         AnonymousAuthContent(
             state,
             { viewModel.enter(onFinished) },

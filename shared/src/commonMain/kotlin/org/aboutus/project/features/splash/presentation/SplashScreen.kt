@@ -8,6 +8,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import org.aboutus.project.core.presentation.components.appGradientBackground
+import org.aboutus.project.core.presentation.components.AmbientFeelingLights
 import org.aboutus.project.features.splash.presentation.components.SplashBrand
 
 @Composable
@@ -16,5 +17,8 @@ fun SplashScreen(viewModel: SplashViewModel, onFinished: () -> Unit) {
     Box(
         Modifier.fillMaxSize().appGradientBackground().navigationBarsPadding(),
         Alignment.Center
-    ) { SplashBrand() }
+    ) {
+        AmbientFeelingLights()
+        SplashBrand()
+    }
 }

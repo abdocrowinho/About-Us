@@ -56,6 +56,11 @@
     <string name="earth_no_voices">لا توجد أصوات في هذا النطاق حتى الآن</string>
     <string name="earth_no_feelings_here">لا&#10;يوجد&#10;مشاعر&#10;هنا</string>
     <string name="earth_message_placeholder">أطلق مشاعرك للعالم</string>
+    <string name="campaign_care_message">نحن نهتم لأمرك</string>
+    <string name="campaign_hours_left">%1$d س</string>
+    <string name="common_done">تم</string>
+    <string name="earth_message_details_title">تفاصيل الرسالة</string>
+    <string name="earth_message_state_label">الحالة:</string>
     <string name="location_title">مكانك، اختيارك</string>
     <string name="location_body">نستخدم موقعك مرة واحدة لفتح الكرة عند منطقتك. الإحداثيات تبقى على جهازك فقط.</string>
     <string name="location_allow">السماح بالموقع</string>

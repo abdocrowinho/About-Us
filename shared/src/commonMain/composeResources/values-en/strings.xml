@@ -54,5 +54,10 @@
     <string name="earth_no_voices">No voices in this scope yet</string>
     <string name="earth_no_feelings_here">No&#10;feelings&#10;here&#10;yet</string>
     <string name="earth_message_placeholder">Share your feelings with the world</string>
+    <string name="campaign_care_message">We care about you</string>
+    <string name="campaign_hours_left">%1$dh</string>
+    <string name="common_done">Done</string>
+    <string name="earth_message_details_title">Message details</string>
+    <string name="earth_message_state_label">State:</string>
     <string name="location_title">Your place, your choice</string><string name="location_body">We use your location once to open the globe at your region. Coordinates stay only on your device.</string><string name="location_allow">Allow location</string><string name="location_loading">Finding your location…</string><string name="location_skip">Not now</string><string name="location_error">We could not find your location. You can continue and choose a region on the globe.</string>
 </resources>

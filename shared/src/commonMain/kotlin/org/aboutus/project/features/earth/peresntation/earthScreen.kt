@@ -52,6 +52,9 @@ import org.aboutus.project.features.earth.peresntation.composables.EarthStatusBa
 import org.aboutus.project.features.earth.peresntation.composables.EarthTourTarget
 import org.aboutus.project.features.about_us.peresntation.GlobeScope
 import org.about_us.project.generated.resources.Res
+import org.about_us.project.generated.resources.common_done
+import org.about_us.project.generated.resources.earth_message_details_title
+import org.about_us.project.generated.resources.earth_message_state_label
 import org.about_us.project.generated.resources.region_mood_first
 import org.about_us.project.generated.resources.region_mood_second
 import org.about_us.project.generated.resources.earth_no_feelings_here
@@ -63,6 +66,10 @@ import org.aboutus.project.features.earth.wave.presentation.WaveViewModel
 import org.aboutus.project.features.earth.words.FloatingWord
 import org.aboutus.project.features.earth.words.ScatteredWordsOverlay
 import org.aboutus.project.features.earth.words.data.MessageState
+import org.aboutus.project.features.campaign.data.CampaignCatalog
+import org.aboutus.project.features.campaign.domain.CampaignEligibility
+import org.aboutus.project.features.campaign.domain.CampaignSignal
+import org.aboutus.project.features.campaign.presentation.CampaignFlightOverlay
 
 @Composable
 fun MapScreen(
@@ -92,6 +99,19 @@ fun MapScreen(
     } else {
         null
     }
+    val activeCampaign = remember(scopeCountryCode, waveState.globalStats) {
+        CampaignEligibility.activeCampaign(
+            campaign = CampaignCatalog.pepsiEgypt,
+            viewerCountryCode = scopeCountryCode,
+            signals = waveState.globalStats.map { stat ->
+                CampaignSignal(
+                    countryCode = stat.country_code,
+                    state = stat.state,
+                    count = stat.count
+                )
+            }
+        )
+    }
 
     Box(
         modifier = Modifier
@@ -117,7 +137,11 @@ fun MapScreen(
                     onDismissRequest = { selectedWordForDialog = null },
                     confirmButton = {
                         TextButton(onClick = { selectedWordForDialog = null }) {
-                            Text("تم", fontWeight = FontWeight.Bold, color = Color(0xFF73B4FF))
+                            Text(
+                                stringResource(Res.string.common_done),
+                                fontWeight = FontWeight.Bold,
+                                color = Color(0xFF73B4FF)
+                            )
                         }
                     },
                     title = {
@@ -127,7 +151,7 @@ fun MapScreen(
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text(
-                                text = "تفاصيل الرسالة",
+                                text = stringResource(Res.string.earth_message_details_title),
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 18.sp
                             )
@@ -137,7 +161,7 @@ fun MapScreen(
                                 shape = RoundedCornerShape(8.dp)
                             ) {
                                 Text(
-                                    text = "📌 ${word.countryCode}",
+                                    text = " ${word.countryCode}",
                                     fontSize = 12.sp,
                                     color = Color.White,
                                     modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)
@@ -164,7 +188,7 @@ fun MapScreen(
                                 horizontalArrangement = Arrangement.spacedBy(6.dp)
                             ) {
                                 Text(
-                                    text = "الحالة:",
+                                    text = stringResource(Res.string.earth_message_state_label),
                                     fontSize = 13.sp,
                                     color = Color.Gray
                                 )
@@ -200,6 +224,16 @@ fun MapScreen(
                 .padding(top = 58.dp)
                 .then(captureTourTarget(EarthTourTarget.STATS))
         )
+
+        activeCampaign?.let { campaign ->
+            CampaignFlightOverlay(
+                campaign = campaign,
+                onCouponClick = { /* Coupon claiming is added with the server-side campaign flow. */ },
+                modifier = Modifier
+                    .align(Alignment.TopCenter)
+                    .padding(top = 150.dp)
+            )
+        }
 
         Column(
             modifier = Modifier

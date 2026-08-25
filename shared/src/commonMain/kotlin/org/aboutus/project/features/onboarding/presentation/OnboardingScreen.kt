@@ -22,15 +22,20 @@ import org.aboutus.project.features.onboarding.presentation.components.*
 fun OnboardingScreen(viewModel: OnboardingViewModel, onFinished: () -> Unit) {
     var index by remember { mutableIntStateOf(0) };
     val page = pages[index]
-    Column(
+    Box(
         Modifier
             .fillMaxSize()
             .appGradientBackground()
             .navigationBarsPadding()
-            .padding(28.dp),
+    ) {
+        AmbientFeelingLights()
+        Column(
+            Modifier
+                .fillMaxSize()
+                .padding(28.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceBetween
-    ) {
+        ) {
         PageIndicator(pages.size, index); AnimatedContent(
         page,
         label = "onboarding"
@@ -49,6 +54,7 @@ fun OnboardingScreen(viewModel: OnboardingViewModel, onFinished: () -> Unit) {
                 stringResource(if (index == pages.lastIndex) Res.string.start_calmly else Res.string.next),
                 fontWeight = FontWeight.Bold
             )
+        }
         }
     }
 }
