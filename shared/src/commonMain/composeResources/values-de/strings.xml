@@ -1,0 +1,38 @@
+<resources>
+    <string name="state_anger">Wut</string>
+    <string name="state_fear">Angst</string>
+    <string name="state_disgust">Ekel</string>
+    <string name="state_hope">Hoffnung</string>
+    <string name="state_nonsense">Absurdität</string>
+    <string name="state_fun">Spaß</string>
+    <string name="state_hunger">Hunger</string>
+    <string name="state_shame">Scham</string>
+    <string name="state_love">Liebe</string>
+    <string name="state_distraction">Ablenkung</string>
+    <string name="state_sad">Traurigkeit</string>
+    <string name="world_mood">Die Welt fühlt %1$s</string>
+    <string name="region_mood">Diese Region fühlt %1$s</string>
+    <string name="stats_votes">%1$d Stimmen</string>
+    <string name="stats_countries">%1$d teilnehmende Länder</string>
+    <string name="stats_empty">Noch keine Stimmen in diesem Bereich</string>
+    <string name="region_mood_first">Diese Region</string>
+    <string name="region_mood_second">fühlt %1$s</string>
+    <string name="world_mood_first">Die Welt</string>
+    <string name="world_mood_second">fühlt %1$s</string>
+    <string name="silent_region">Diese Region fühlt noch nichts</string>
+    <string name="splash_tagline">Unsere gemeinsame menschliche Stimme</string>
+    <string name="onboarding_one_title">Ein Puls für die Welt</string>
+    <string name="onboarding_one_body">About Us zeichnet einen lebendigen menschlichen Moment aus Worten und Gefühlen weltweit.</string>
+    <string name="onboarding_two_title">Jedes Wort zählt</string>
+    <string name="onboarding_two_body">Wähle dein Gefühl und schreibe ein Wort. Es wird Teil unseres gemeinsamen Bildes.</string>
+    <string name="onboarding_three_title">Kein Name. Kein Urteil.</string>
+    <string name="onboarding_three_body">Du bleibst völlig anonym. Ehrlichkeit macht den Puls echt.</string>
+    <string name="next">Weiter</string><string name="start_calmly">Sanft beginnen</string>
+    <string name="auth_title">Ein Raum ohne Namen</string><string name="auth_body">Wir fragen weder nach deinem Namen noch nach E-Mail oder persönlichen Daten.</string>
+    <string name="auth_enter">Anonym starten</string><string name="auth_loading">Startet…</string><string name="auth_existing">Ich habe einen Raum auf diesem Gerät</string><string name="auth_error">Raum kann gerade nicht erstellt werden</string>
+    <string name="tour_wave_title">Die Welle</string><string name="tour_wave_body">Ihre Farbe zeigt das vorherrschende Gefühl, ihre Bewegung die Aktivität.</string>
+    <string name="tour_states_title">Zustände</string><string name="tour_states_body">Wähle vor dem Senden das Gefühl, das dir am nächsten ist.</string>
+    <string name="tour_scope_title">Welt oder Region</string><string name="tour_scope_body">Die leuchtende Welt-Schaltfläche zeigt den globalen Puls.</string>
+    <string name="tour_truth_title">Seien wir ehrlich</string><string name="tour_truth_body">Teile deine echten Gefühle. Ehrliche Zahlen helfen uns, die Welt zu sehen, wie sie ist.</string><string name="tour_done">Ich bin bereit, ehrlich zu sein</string><string name="tour_got_it">Verstanden</string><string name="tour_truth_final">Sei ehrlich. Du musst nie verbergen, was du fühlst.</string><string name="tour_stats_title">Statusleiste</string><string name="tour_stats_body">Hier siehst du Stimmen und Anteile jedes Gefühls.</string>
+    <string name="earth_no_internet">Keine Internetverbindung</string><string name="earth_update_failed">Puls kann gerade nicht aktualisiert werden</string><string name="earth_loading">Puls wird aktualisiert…</string><string name="earth_no_voices">Noch keine Stimmen in diesem Bereich</string><string name="earth_no_feelings_here">Keine&#10;Gefühle&#10;hier&#10;bislang</string><string name="earth_message_placeholder">Teile deine Gefühle mit der Welt</string>
+</resources>

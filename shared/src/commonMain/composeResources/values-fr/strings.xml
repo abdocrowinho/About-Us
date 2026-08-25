@@ -1,0 +1,38 @@
+<resources>
+    <string name="state_anger">Colère</string>
+    <string name="state_fear">Peur</string>
+    <string name="state_disgust">Dégoût</string>
+    <string name="state_hope">Espoir</string>
+    <string name="state_nonsense">Absurdité</string>
+    <string name="state_fun">Joie</string>
+    <string name="state_hunger">Faim</string>
+    <string name="state_shame">Honte</string>
+    <string name="state_love">Amour</string>
+    <string name="state_distraction">Distraction</string>
+    <string name="state_sad">Tristesse</string>
+    <string name="world_mood">Le monde ressent %1$s</string>
+    <string name="region_mood">Cette région ressent %1$s</string>
+    <string name="stats_votes">%1$d voix</string>
+    <string name="stats_countries">%1$d pays participants</string>
+    <string name="stats_empty">Pas encore de voix dans cette zone</string>
+    <string name="region_mood_first">Cette région</string>
+    <string name="region_mood_second">ressent %1$s</string>
+    <string name="world_mood_first">Le monde</string>
+    <string name="world_mood_second">ressent %1$s</string>
+    <string name="silent_region">Cette région ne ressent encore rien</string>
+    <string name="splash_tagline">Notre voix humaine commune</string>
+    <string name="onboarding_one_title">Un pouls pour le monde</string>
+    <string name="onboarding_one_body">About Us dessine un moment humain vivant à partir des mots et émotions du monde.</string>
+    <string name="onboarding_two_title">Chaque mot compte</string>
+    <string name="onboarding_two_body">Choisissez votre émotion et écrivez un mot. Il devient une pulsation de notre image commune.</string>
+    <string name="onboarding_three_title">Pas de nom. Pas de jugement.</string>
+    <string name="onboarding_three_body">Vous restez totalement anonyme. L’honnêteté rend le pouls réel.</string>
+    <string name="next">Suivant</string><string name="start_calmly">Commencer doucement</string>
+    <string name="auth_title">Un espace sans nom</string><string name="auth_body">Nous ne demandons ni votre nom, ni e-mail, ni information personnelle.</string>
+    <string name="auth_enter">Entrer anonymement</string><string name="auth_loading">Connexion…</string><string name="auth_existing">J’ai un espace sur cet appareil</string><string name="auth_error">Impossible de créer votre espace</string>
+    <string name="tour_wave_title">La vague</string><string name="tour_wave_body">Sa couleur révèle l’émotion dominante et son mouvement l’activité.</string>
+    <string name="tour_states_title">États</string><string name="tour_states_body">Choisissez l’état le plus proche de vous avant l’envoi.</string>
+    <string name="tour_scope_title">Monde ou région</string><string name="tour_scope_body">Le bouton Monde lumineux montre le pouls global.</string>
+    <string name="tour_truth_title">Soyons vrais</string><string name="tour_truth_body">Partagez vos émotions réelles. Des chiffres honnêtes nous aident à voir le monde tel qu’il est.</string><string name="tour_done">Je suis prêt à être honnête</string><string name="tour_got_it">Compris</string><string name="tour_truth_final">Soyez honnête. Vous n’avez pas à cacher ce que vous ressentez.</string><string name="tour_stats_title">Barre des états</string><string name="tour_stats_body">Ici, vous voyez les voix et la part de chaque émotion.</string>
+    <string name="earth_no_internet">Pas de connexion Internet</string><string name="earth_update_failed">Impossible d’actualiser le pouls</string><string name="earth_loading">Mise à jour du pouls…</string><string name="earth_no_voices">Pas encore de voix dans cette zone</string><string name="earth_no_feelings_here">Pas&#10;d’émotions&#10;ici&#10;encore</string><string name="earth_message_placeholder">Partagez vos émotions avec le monde</string>
+</resources>

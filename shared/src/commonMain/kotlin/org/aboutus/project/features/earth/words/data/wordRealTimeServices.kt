@@ -1,0 +1,63 @@
+//package org.aboutus.project.features.earth.words.data
+//
+//import io.github.jan.supabase.SupabaseClient
+//import io.github.jan.supabase.postgrest.postgrest
+//import io.github.jan.supabase.postgrest.rpc
+//import io.github.jan.supabase.realtime.RealtimeChannel
+//import io.github.jan.supabase.realtime.broadcastFlow
+//import io.github.jan.supabase.realtime.channel
+//import io.github.jan.supabase.realtime.realtime
+//import kotlinx.coroutines.flow.Flow
+//import kotlinx.serialization.json.Json
+//import kotlinx.serialization.json.encodeToJsonElement
+//import kotlinx.serialization.json.jsonObject
+//import org.aboutus.project.features.earth.data.SupabaseConfig
+//
+//class WordsRealtimeService(
+//    private val client: SupabaseClient = SupabaseConfig.client
+//) {
+//    private val channel: RealtimeChannel = client.realtime.channel(RealtimeConstants.GLOBE_CHANNEL_NAME)
+//
+//    suspend fun connect() {
+//        channel.subscribe()
+//    }
+//
+//    fun listenToWordsStream(): Flow<WordPayload> {
+//        return channel.broadcastFlow(event = RealtimeConstants.EVENT_NEW_WORD)
+//    }
+//
+//    suspend fun sendWord(payload: WordPayload) {
+//        channel.broadcast(
+//            event = RealtimeConstants.EVENT_NEW_WORD,
+//            message = Json.encodeToJsonElement(payload).jsonObject
+//        )
+//
+//        recordWordStat(countryCode = payload.countryCode, state = payload.state)
+//    }
+//
+//    private suspend fun recordWordStat(countryCode: String, state: MessageState) {
+//        client.postgrest.rpc(
+//            function = RealtimeConstants.RpcFunctions.INCREMENT_COUNTRY_STAT,
+//            parameters = mapOf(
+//                RealtimeConstants.RpcParams.PARAM_COUNTRY to countryCode,
+//                RealtimeConstants.RpcParams.PARAM_STATE to state.value
+//            )
+//        )
+//    }
+//
+//    suspend fun fetchCountryStats(countryCode: String? = null): List<CountryStatDto> {
+//        val params = if (countryCode != null) {
+//            mapOf(RealtimeConstants.RpcParams.PARAM_TARGET_COUNTRY to countryCode)
+//        } else {
+//            emptyMap()
+//        }
+//
+//        return client.postgrest
+//            .rpc(RealtimeConstants.RpcFunctions.GET_COUNTRY_STATS, parameters = params)
+//            .decodeList<CountryStatDto>()
+//    }
+//
+//    suspend fun disconnect() {
+//        client.realtime.removeChannel(channel)
+//    }
+//}

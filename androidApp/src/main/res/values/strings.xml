@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">About Us</string>
+
+    <!-- Splash -->
+    <string name="splash_app_title">About Us</string>
+    <string name="splash_tagline">صوتنا الإنساني المشترك</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_skip">تخطّ</string>
+    <string name="onboarding_next">التالي</string>
+    <string name="onboarding_start">ابدأ الآن</string>
+    <string name="onboarding_page1_title">الصلاة في وقتها</string>
+    <string name="onboarding_page1_subtitle">تذكّر صلاتك مع أحبابك في كل وقت وحين</string>
+    <string name="onboarding_page2_title">صحبة الخير</string>
+    <string name="onboarding_page2_subtitle">انضم لمجموعتك وتابع أحوال إخوانك يومياً</string>
+    <string name="onboarding_page3_title">الذكر اللاسلكي</string>
+    <string name="onboarding_page3_subtitle">شارك أذكارك فورياً بضغطة واحدة</string>
+    <string name="onboarding_page4_title">قصص وأحاديث</string>
+    <string name="onboarding_page4_subtitle">استلهم من سير الصحابة والأحاديث النبوية كل يوم</string>
+
+    <!-- Auth placeholders -->
+    <string name="login_title">تسجيل الدخول</string>
+    <string name="register_title">إنشاء حساب</string>
+    <string name="auth_placeholder_hint">قريباً</string>
+
+    <!-- Group Dashboard -->
+    <string name="group_active_members">%1$d أعضاء نشطون</string>
+    <string name="group_prayer_now">الصلاة الآن</string>
+    <string name="group_ready_idle">سجّل جاهزيتك</string>
+    <string name="group_ready_done">✓ سجلت جاهزيتك</string>
+    <string name="group_ready_completed">أتممت الصلاة</string>
+    <string name="group_members_section">حالة الأعضاء</string>
+    <string name="group_walkie_title">الذكر اللاسلكي</string>
+    <string name="group_walkie_subtitle">اضغط مع الاستمرار للتحدث مع المجموعة</string>
+    <string name="group_walkie_live">مباشر</string>
+    <string name="group_search">بحث</string>
+    <string name="group_menu">المزيد</string>
+    <string name="group_switch">تبديل المجموعة</string>
+    <string name="member_status_prayed">صلّى</string>
+    <string name="member_status_ready">جاهز</string>
+    <string name="member_status_waiting">في الانتظار</string>
+    <string name="countdown_hours">ساعة</string>
+    <string name="countdown_minutes">دقيقة</string>
+    <string name="countdown_seconds">ثانية</string>
+
+    <!-- Notifications -->
+    <string name="notifications_title">سجل الإشعارات</string>
+    <string name="notifications_empty">لا توجد إشعارات حتى الآن</string>
+    <string name="notifications_group_today">اليوم</string>
+    <string name="notifications_group_yesterday">أمس</string>
+    <string name="notifications_group_earlier">سابقاً</string>
+    <string name="notifications_delete">حذف</string>
+    <string name="notifications_back">رجوع</string>
+
+    <!-- Accessibility -->
+    <string name="cd_back">رجوع</string>
+    <string name="cd_skip_onboarding">تخطي التعريف</string>
+    <string name="cd_next_page">الصفحة التالية</string>
+    <string name="cd_ready_button">زر الجاهزية</string>
+    <string name="cd_mic_button">زر الميكروفون</string>
+    <string name="cd_notification_icon">أيقونة الإشعار</string>
+    <string name="cd_member_avatar">صورة العضو</string>
+    <string name="cd_search">بحث</string>
+    <string name="cd_menu">القائمة</string>
+</resources>
