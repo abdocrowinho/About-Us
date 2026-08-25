@@ -14,6 +14,7 @@ import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.aboutus.project.features.earth.data.GeoJsonParser
 import org.aboutus.project.features.earth.domain.GeoUtils
 import org.aboutus.project.features.earth.domain.Projection3D
+import org.aboutus.project.features.earth.domain.toAppCountryIdentity
 import org.aboutus.project.features.about_us.peresntation.Map3DState
 import org.aboutus.project.features.about_us.peresntation.GlobeScope
 import org.aboutus.project.features.location.domain.UserLocationPreferences
@@ -48,11 +49,21 @@ class Map3DViewModel(
                 GeoUtils.isPointInPolygon(centerLatLng, country.boundary)
             }
 
+            val identity = matchedCountry?.toAppCountryIdentity()
             currentState.copy(
                 rotationX = newRotX,
                 rotationY = newRotY,
-                selectedCountryName = matchedCountry?.name,
-                selectedCountryCode = matchedCountry?.id?.substringBefore("_")
+                selectedCountryName = identity?.name,
+                selectedCountryCode = identity?.code
+            )
+        }
+    }
+
+    fun onZoom(zoomFactor: Float) {
+        _state.update { currentState ->
+            currentState.copy(
+                globeRadius = (currentState.globeRadius * zoomFactor)
+                    .coerceIn(MIN_GLOBE_RADIUS, MAX_GLOBE_RADIUS)
             )
         }
     }
@@ -85,10 +96,11 @@ class Map3DViewModel(
                 _state.update { current ->
                     val center = GeoUtils.getCenterLatLng(current.rotationX, current.rotationY)
                     val matched = countries3D.firstOrNull { GeoUtils.isPointInPolygon(center, it.boundary) }
+                    val identity = matched?.toAppCountryIdentity()
                     current.copy(
                         countries = countries3D,
-                        selectedCountryName = matched?.name,
-                        selectedCountryCode = matched?.id?.substringBefore("_")
+                        selectedCountryName = identity?.name,
+                        selectedCountryCode = identity?.code
                     )
                 }
             } catch (e: Exception) {
@@ -97,3 +109,6 @@ class Map3DViewModel(
         }
     }
 }
+
+private const val MIN_GLOBE_RADIUS = 125f
+private const val MAX_GLOBE_RADIUS = 360f

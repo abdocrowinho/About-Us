@@ -27,6 +27,7 @@ fun ScatteredWordsOverlay(
     words: List<FloatingWord>,
     onWordClick: (FloatingWord) -> Unit,
     onDrag: (Float, Float) -> Unit,
+    onZoom: (Float) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val textMeasurer = rememberTextMeasurer()
@@ -41,9 +42,30 @@ fun ScatteredWordsOverlay(
                     val downOffset = down.position
                     var totalDrag = Offset.Zero
                     var isDragging = false
+                    var isPinching = false
+                    var previousPinchDistance: Float? = null
                     while (true) {
                         val event = awaitPointerEvent()
                         val change = event.changes.firstOrNull { it.id == down.id } ?: break
+                        val pressedPointers = event.changes.filter { it.pressed }
+                        if (pressedPointers.size >= 2) {
+                            val first = pressedPointers[0].position
+                            val second = pressedPointers[1].position
+                            val distance = hypot(first.x - second.x, first.y - second.y)
+                            previousPinchDistance?.let { previousDistance ->
+                                if (previousDistance > 0f && distance > 0f) {
+                                    onZoom((distance / previousDistance).coerceIn(.94f, 1.06f))
+                                }
+                            }
+                            previousPinchDistance = distance
+                            isPinching = true
+                            pressedPointers.forEach { it.consume() }
+                            continue
+                        }
+                        if (isPinching) {
+                            if (pressedPointers.isEmpty()) break
+                            continue
+                        }
                         val dragAmount = change.positionChange()
                         totalDrag += dragAmount
                         if (hypot(totalDrag.x, totalDrag.y) > 14f) isDragging = true

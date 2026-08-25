@@ -129,7 +129,8 @@ fun MapScreen(
                 selectedWordForDialog = clickedWord
             },
             modifier = Modifier.fillMaxSize(),
-            onDrag = viewModel::onDrag
+            onDrag = viewModel::onDrag,
+            onZoom = viewModel::onZoom
         )
 
         selectedWordForDialog?.let { word ->
